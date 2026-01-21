@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Dashboard | Experiment 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <div class="brand">Facebook</div>
+
+        <nav class="nav-links">
+          <a href="#" class="active">Feed</a>
+          <a href="#">Network</a>
+          <a href="#">Projects</a>
+        </nav>
+
+        <div class="user-menu">
+          <img src="assets/avatar.png" alt="User" class="avatar-small" />
+        </div>
+      </div>
+    </header>
+
+    <main class="layout container">
+      <aside class="left-column sticky-sidebar">
+        <div class="card profile-card">
+          <div class="profile-header-bg"></div>
+          <img src="assets/avatar.png" alt="Profile" class="avatar-large" />
+          <div class="profile-info">
+            <h2 id="profile-name">Alex Dev</h2>
+            <p id="profile-bio">
+              Frontend Enthusiast. Building things that live on the web.
+            </p>
+            <button id="edit-profile-btn" class="btn-primary">
+              Edit Profile
+            </button>
+          </div>
+        </div>
+
+        <nav class="card side-menu">
+          <ul>
+            <li class="active" id="nav-home"><span>🏠</span> Home</li>
+            <li id="nav-messages">
+              <span>💬</span> Messages <span class="badge">3</span>
+            </li>
+            <li id="nav-saved"><span>🔖</span> Saved</li>
+            <li id="nav-settings"><span>⚙️</span> Settings</li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="center-column">
+        <div class="card create-post">
+          <textarea
+            placeholder="Share your knowledge..."
+            id="post-input"
+          ></textarea>
+          <div class="post-actions">
+            <button id="post-btn" class="btn-primary">Post Update</button>
+          </div>
+        </div>
+
+        <div class="feed" id="feed-container">
+          <article class="card post-card">
+            <header class="post-header">
+              <img src="assets/avatar.png" class="avatar-small" />
+              <div class="post-meta">
+                <span class="post-author">Alex Dev</span>
+                <span class="post-time">2 hrs ago</span>
+              </div>
+            </header>
+            <p class="post-content">
+              Just finished setting up the new 3-column layout grid. CSS Grid
+              makes sticky sidebars so much easier to handle! 🚀
+            </p>
+            <footer class="post-footer">
+              <button class="action-btn like-btn">❤️ <span>12</span></button>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <aside class="right-column sticky-sidebar">
+        <div class="card info-card">
+          <h3>Active Students</h3>
+          <ul class="friend-list">
+            <li>
+              <div class="status-dot"></div>
+              Sarah J.
+            </li>
+            <li>
+              <div class="status-dot"></div>
+              Mike R.
+            </li>
+            <li>
+              <div class="status-dot"></div>
+              Davina C.
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <div class="modal-overlay" id="profile-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Update Info</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="form-group">
+          <label>Display Name</label>
+          <input type="text" id="edit-name" />
+        </div>
+        <div class="form-group">
+          <label>Bio</label>
+          <textarea id="edit-bio" rows="3"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button id="save-profile-btn" class="btn-primary">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="messages-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Messages</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="msg-list">
+          <div class="msg-item">
+            <strong>Sarah J:</strong> Hey, can you help with the Grid?
+          </div>
+          <div class="msg-item">
+            <strong>Mike R:</strong> Submission is due tomorrow!
+          </div>
+          <div class="msg-item">
+            <strong>System:</strong> Welcome to Facebook.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="saved-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Saved Posts</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <p>You haven't saved any posts yet.</p>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="settings-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Settings</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="form-group">
+          <label>Dark Mode</label>
+          <select
+            id="dark-mode-toggle"
+            style="width: 100%; padding: 8px; border-radius: 6px"
+          >
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Notifications</label>
+          <input type="checkbox" checked /> Enable email notifications
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
